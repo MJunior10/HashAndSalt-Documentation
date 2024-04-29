@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Cadastro e Login</h1>
+
+  <form
+    class="form"
+    [formGroup]="formGroup"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" formControlName="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="senha">Senha:</label>
+      <input type="password" formControlName="senha" required>
+    </div>
+
+    <button type="button" (click)="toggleCadastroLogin()">Trocar para {{ mostrarCadastro ? 'Login' : 'Cadastro' }}</button>
+    <button type="submit">{{ mostrarCadastro ? 'Cadastro' : 'Login'}}</button>
+  </form>
+
+  <div class="mensagem" *ngIf="mensagem">{{ mensagem }}</div>
+</div>
